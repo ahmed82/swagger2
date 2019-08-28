@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiParam;
 
 @RestController
 @RequestMapping("/api")
@@ -24,7 +25,8 @@ public class AddressBookResource {
 	@ApiOperation(value= "Finds contact by id",
 	notes = "Provide an id to look up specific contact from address book",
 	response = Contact.class)
-	public Contact getContact(@PathVariable String id) {
+	public Contact getContact(@ApiParam(value = "Id value for the contact you need to retrieve", required = true)
+							 @PathVariable String id) {
 		return contacts.get(id);
 	}
 	@GetMapping("/")
