@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import io.swagger.annotations.ApiOperation;
+
 @RestController
 @RequestMapping("/api")
 public class AddressBookResource {
@@ -19,6 +21,9 @@ public class AddressBookResource {
 	ConcurrentMap<String, Contact> contacts = new ConcurrentHashMap<>();
 	
 	@GetMapping("/{id}")
+	@ApiOperation(value= "Finds contact by id",
+	notes = "Provide an id to look up specific contact from address book",
+	response = Contact.class)
 	public Contact getContact(@PathVariable String id) {
 		return contacts.get(id);
 	}
