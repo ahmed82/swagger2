@@ -21,26 +21,20 @@ ConcurrentMap<String, Contact> contacts = new ConcurrentHashMap<>();
 @ApiResponses	A wrapper to allow a list of multiple ApiResponse objects.
 
 
-For Ui access : http://localhost:8080/swagger-ui.html
+To view Swagger2 Ui API details : http://localhost:8080/swagger-ui.html
 
-For full Json call details :http://localhost:8080/v2/api-docs
+For full Json call details : http://localhost:8080/v2/api-docs
 
 to enable swagger 2 use @EnableSwagger2
 
 then create Doket Bean:
 
 @Bean
-    public Docket swaggerConfiguration() {
-        return new Docket(DocumentationType.SWAGGER_2)
-        	.select()
-            .paths(PathSelectors.ant("/api/*"))
-            .apis(RequestHandlerSelectors.basePackage("com.example"))
-            .build().apiInfo(apiEndPointsInfo());
-    }
-
-To View the Swagger UI:
-http://localhost:8080/swagger-ui.html
-
-To view the json Api information 
-http://localhost:8080/v2/api-docs
+public Docket swaggerConfiguration() {
+return new Docket(DocumentationType.SWAGGER_2)
+.select()
+.paths(PathSelectors.ant("/api/*"))
+.apis(RequestHandlerSelectors.basePackage("com.example"))
+.build().apiInfo(apiEndPointsInfo());
+}
 
