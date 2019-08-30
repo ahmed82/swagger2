@@ -26,8 +26,9 @@ then Doket Bean:
             .build().apiInfo(apiEndPointsInfo());
     }
 
-
-
-/v2/api-docs
+To View the Swagger UI:
 localhost:8080/swagger-ui.html
+
+To view the json Api information 
 http://localhost:8080/v2/api-docs
+
