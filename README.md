@@ -38,3 +38,12 @@ return new Docket(DocumentationType.SWAGGER_2)
 .build().apiInfo(apiEndPointsInfo());
 }
 
+Test with Postman:
+POST
+Body
+raw
+{
+	"id":"omar",
+	"name":"Omar Al-Salih",
+	"phone":"123-123-1234"
+}
